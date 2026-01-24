@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AISAAS - الذكاء الاصطناعي والأتمتة الاحترافية</title>
+    <title>AISAAS - مركز تدريب الذكاء الاصطناعي والأتمتة</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,7 +20,8 @@
         }
         .animate-float { animation: float 6s ease-in-out infinite; }
         @keyframes float { 0% { transform: translateY(0px); } 50% { transform: translateY(-20px); } 100% { transform: translateY(0px); } }
-        .feature-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
+        .course-card:hover { transform: translateY(-10px); box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1); }
+        .feature-card:hover { transform: scale(1.02); }
     </style>
 <script type="importmap">
 {
@@ -43,8 +44,8 @@
 
                 <!-- Desktop Menu -->
                 <div class="hidden md:flex items-center space-x-10 space-x-reverse">
+                    <a href="#courses" class="text-slate-600 hover:text-blue-600 font-semibold transition-all" data-t="nav.courses">الدورات</a>
                     <a href="#features" class="text-slate-600 hover:text-blue-600 font-semibold transition-all" data-t="nav.features">المميزات</a>
-                    <a href="#automation" class="text-slate-600 hover:text-blue-600 font-semibold transition-all" data-t="nav.automation">الأتمتة</a>
                     <a href="#pricing" class="text-slate-600 hover:text-blue-600 font-semibold transition-all" data-t="nav.pricing">الأسعار</a>
                     
                     <div class="flex items-center bg-slate-100/50 p-1 rounded-2xl border border-slate-200/50">
@@ -53,7 +54,7 @@
                         <button onclick="setLanguage('ar')" id="btn-ar" class="px-3 py-1.5 text-xs font-bold rounded-xl transition-all">AR</button>
                     </div>
 
-                    <a href="#contact" class="bg-blue-600 text-white px-7 py-3.5 rounded-2xl font-bold hover:bg-blue-700 transition-all shadow-lg shadow-blue-200 active:scale-95" data-t="nav.start">ابدأ الآن</a>
+                    <a href="#contact" class="bg-blue-600 text-white px-7 py-3.5 rounded-2xl font-bold hover:bg-blue-700 transition-all shadow-lg shadow-blue-200 active:scale-95" data-t="nav.start">سجل الآن</a>
                 </div>
 
                 <div class="md:hidden flex items-center">
@@ -64,8 +65,8 @@
             </div>
         </div>
         <div id="mobile-menu" class="hidden md:hidden bg-white/95 backdrop-blur-xl border-b border-slate-100 p-6 space-y-4 shadow-2xl">
+            <a href="#courses" onclick="toggleMobileMenu()" class="block text-lg font-semibold text-slate-700">الدورات</a>
             <a href="#features" onclick="toggleMobileMenu()" class="block text-lg font-semibold text-slate-700">المميزات</a>
-            <a href="#pricing" onclick="toggleMobileMenu()" class="block text-lg font-semibold text-slate-700">الأسعار</a>
             <a href="#contact" onclick="toggleMobileMenu()" class="block text-lg font-bold text-blue-600">ابدأ الآن</a>
         </div>
     </nav>
@@ -75,29 +76,40 @@
         <div class="max-w-7xl mx-auto text-center relative z-10">
             <div class="inline-flex items-center px-4 py-2 rounded-full bg-blue-50 border border-blue-100 text-blue-700 text-xs sm:text-sm font-bold mb-10 shadow-sm">
                 <span class="flex h-2 w-2 rounded-full bg-blue-600 animate-pulse ml-3"></span>
-                <span data-t="hero.badge">منصة الأتمتة والذكاء الاصطناعي الأقوى</span>
+                <span data-t="hero.badge">أكاديمية تدريب الذكاء الاصطناعي الرائدة</span>
             </div>
             
             <h1 class="text-5xl md:text-7xl lg:text-8xl font-black text-slate-900 leading-[1] mb-8 tracking-tight" data-t="hero.title">
-                حوّل عملك بذكاء <br class="hidden md:block"> خارق وأتمتة كاملة
+                أتقن مهارات <br class="hidden md:block"> المستقبل اليوم
             </h1>
             
             <p class="max-w-2xl mx-auto text-lg md:text-xl text-slate-500 mb-12 leading-relaxed font-medium" data-t="hero.subtitle">
-                نحن لا نقدم مجرد أدوات، بل نبني لك نظاماً متكاملاً يعمل بالنيابة عنك 24/7. أتمتة الواتساب، الشات بوت، ونظم n8n في مكان واحد.
+                انضم إلى برامجنا التدريبية المكثفة في الذكاء الاصطناعي والأتمتة. تعلم كيف تبني أنظمتك الخاصة وتوفر آلاف الساعات من العمل اليدوي.
             </p>
             
             <div class="flex flex-col sm:flex-row justify-center items-center gap-6">
-                <a href="#contact" class="w-full sm:w-auto px-12 py-5 bg-blue-600 text-white rounded-[2rem] font-bold text-xl hover:bg-blue-700 transition-all shadow-2xl shadow-blue-200 hover:-translate-y-1 active:scale-95" data-t="hero.cta">احصل على استشارة مجانية</a>
-                <a href="#features" class="w-full sm:w-auto px-12 py-5 bg-white text-slate-700 border border-slate-200 rounded-[2rem] font-bold text-xl hover:bg-slate-50 transition-all" data-t="hero.demo">شاهد كيف يعمل</a>
+                <a href="#courses" class="w-full sm:w-auto px-12 py-5 bg-blue-600 text-white rounded-[2rem] font-bold text-xl hover:bg-blue-700 transition-all shadow-2xl shadow-blue-200 hover:-translate-y-1 active:scale-95" data-t="hero.cta">استعرض الدورات المتاحة</a>
+                <a href="#contact" class="w-full sm:w-auto px-12 py-5 bg-white text-slate-700 border border-slate-200 rounded-[2rem] font-bold text-xl hover:bg-slate-50 transition-all" data-t="hero.demo">تواصل مع مستشار تعليمي</a>
             </div>
 
             <div class="mt-24 relative max-w-6xl mx-auto">
                 <div class="p-4 bg-white/50 border border-white/80 rounded-[4rem] shadow-2xl animate-float">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1200" alt="Dashboard" class="rounded-[3rem] w-full shadow-2xl border border-slate-100">
+                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=1200" alt="Training Center" class="rounded-[3rem] w-full shadow-2xl border border-slate-100">
                 </div>
-                <!-- Glow effects -->
-                <div class="absolute -top-10 -right-10 w-64 h-64 bg-blue-400 rounded-full mix-blend-multiply filter blur-[100px] opacity-20 -z-10"></div>
-                <div class="absolute -bottom-10 -left-10 w-64 h-64 bg-indigo-400 rounded-full mix-blend-multiply filter blur-[100px] opacity-20 -z-10"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses" class="py-32 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-24">
+                <h2 class="text-4xl md:text-6xl font-black text-slate-900 mb-6" data-t="courses.title">برامجنا التدريبية</h2>
+                <p class="text-slate-500 text-lg max-w-2xl mx-auto" data-t="courses.subtitle">دورات تطبيقية مصممة لنقلك من الصفر إلى الاحتراف في مجال الأتمتة والذكاء الاصطناعي.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10" id="courses-grid">
+                <!-- Courses injected by JS -->
             </div>
         </div>
     </section>
@@ -106,8 +118,8 @@
     <section id="features" class="py-32 bg-slate-50/80 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="text-center mb-24">
-                <h2 class="text-4xl md:text-6xl font-black text-slate-900 mb-6" data-t="features.title">ما الذي يجعلنا مختلفين؟</h2>
-                <p class="text-slate-500 text-lg max-w-2xl mx-auto" data-t="features.subtitle">حلول مصممة خصيصاً لتناسب احتياجات الشركات التي تطمح للنمو المتسارع.</p>
+                <h2 class="text-4xl md:text-6xl font-black text-slate-900 mb-6" data-t="features.title">لماذا تتدرب معنا؟</h2>
+                <p class="text-slate-500 text-lg max-w-2xl mx-auto" data-t="features.subtitle">نقدم تجربة تعليمية فريدة تركز على التطبيق العملي والنتائج الحقيقية.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8" id="features-grid">
@@ -116,33 +128,12 @@
         </div>
     </section>
 
-    <!-- Automation Section -->
-    <section id="automation" class="py-32 overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="flex flex-col lg:flex-row gap-20 items-center">
-                <div class="lg:w-1/2">
-                    <h2 class="text-4xl md:text-5xl font-black text-slate-900 mb-8 leading-tight" data-t="automation.title">أتمتة بلا حدود مع أقوى الأدوات</h2>
-                    <p class="text-xl text-slate-600 mb-12 font-medium" data-t="automation.desc">نستخدم n8n لربط أكثر من 400 تطبيق برمجياً، و Chatwoot لإدارة المحادثات، و WhatsApp API الرسمي.</p>
-                    
-                    <div class="space-y-8" id="automation-list">
-                        <!-- List injected by JS -->
-                    </div>
-                </div>
-                <div class="lg:w-1/2 relative">
-                    <div class="p-6 bg-white border border-slate-100 rounded-[4rem] shadow-[0_50px_100px_-20px_rgba(0,0,0,0.1)] relative z-10">
-                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800" class="rounded-[3rem] w-full" alt="Automation Visualization">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Pricing Section -->
     <section id="pricing" class="py-32 px-4">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-24">
-                <h2 class="text-4xl md:text-6xl font-black text-slate-900 mb-6" data-t="pricing.title">خطط تناسب طموحك</h2>
-                <p class="text-slate-500 text-lg" data-t="pricing.subtitle">استثمر في ذكاء عملك اليوم لتوفير آلاف الساعات مستقبلاً.</p>
+                <h2 class="text-4xl md:text-6xl font-black text-slate-900 mb-6" data-t="pricing.title">باقات التدريب</h2>
+                <p class="text-slate-500 text-lg" data-t="pricing.subtitle">اختر الباقة التي تناسب أهدافك المهنية وميزانيتك.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-10" id="pricing-grid">
@@ -156,11 +147,10 @@
         <div class="max-w-7xl mx-auto px-4">
             <div class="bg-blue-600 rounded-[5rem] p-12 lg:p-24 text-white flex flex-col lg:flex-row gap-20 items-center shadow-[0_50px_100px_-20px_rgba(37,99,235,0.4)]">
                 <div class="lg:w-1/2 text-center lg:text-right">
-                    <h2 class="text-5xl md:text-7xl font-black mb-8" data-t="contact.title">لنبدأ رحلة <br> النجاح معاً</h2>
-                    <p class="text-blue-100 text-xl mb-12 font-medium" data-t="contact.desc">فريقنا جاهز لتحليل عملك واقتراح أفضل سيناريوهات الأتمتة الممكنة.</p>
+                    <h2 class="text-5xl md:text-7xl font-black mb-8" data-t="contact.title">احجز مقعدك <br> الآن</h2>
+                    <p class="text-blue-100 text-xl mb-12 font-medium" data-t="contact.desc">المقاعد محدودة لضمان جودة التدريب والتفاعل المباشر مع المدربين.</p>
                     <a href="https://wa.me/YOUR_NUMBER" target="_blank" class="inline-flex items-center px-12 py-6 bg-green-500 rounded-[2.5rem] font-black text-2xl hover:bg-green-600 transition-all hover:scale-105 active:scale-95 shadow-2xl shadow-green-900/20">
-                        <svg class="w-10 h-10 ml-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766 0-3.181-2.587-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.667.042-1.077-.089-.25-.08-.57-.184-1.053-.418-2.045-.992-3.363-3.076-3.465-3.212-.102-.136-.837-1.111-.837-2.126 0-1.014.532-1.512.721-1.714.19-.203.414-.254.55-.254.135 0 .27.001.388.007.126.006.294-.047.461.353.17.409.58 1.419.63 1.52.051.102.084.22.016.356s-.101.22-.203.339c-.102.119-.214.266-.305.356-.101.102-.207.214-.089.418.118.203.524.866 1.127 1.402.774.69 1.424.906 1.627 1.008s.322.085.441-.051c.119-.136.508-.593.644-.796.136-.203.27-.17.457-.102.187.068 1.185.559 1.389.661.203.102.339.152.389.237.05.085.05.491-.094.896z"/></svg>
-                        واتساب مباشر
+                        تواصل معنا عبر واتساب
                     </a>
                 </div>
                 <div class="lg:w-1/2 w-full bg-white/10 backdrop-blur-3xl border border-white/20 p-10 md:p-14 rounded-[4rem]">
@@ -168,9 +158,14 @@
                         <div class="space-y-4">
                             <input type="text" placeholder="الاسم الكامل" class="w-full px-8 py-5 rounded-[1.5rem] bg-white/5 border border-white/20 focus:bg-white/10 outline-none transition-all placeholder-white/60 text-lg">
                             <input type="email" placeholder="البريد الإلكتروني" class="w-full px-8 py-5 rounded-[1.5rem] bg-white/5 border border-white/20 focus:bg-white/10 outline-none transition-all placeholder-white/60 text-lg">
-                            <textarea rows="4" placeholder="كيف يمكننا مساعدتك؟" class="w-full px-8 py-5 rounded-[1.5rem] bg-white/5 border border-white/20 focus:bg-white/10 outline-none transition-all placeholder-white/60 text-lg"></textarea>
+                            <select class="w-full px-8 py-5 rounded-[1.5rem] bg-blue-700/50 border border-white/20 focus:bg-blue-700 outline-none transition-all text-white text-lg appearance-none">
+                                <option value="" disabled selected>اختر الدورة المهتم بها</option>
+                                <option>هندسة الأوامر (Prompt Engineering)</option>
+                                <option>أتمتة العمليات (n8n & Zapier)</option>
+                                <option>بناء وكلاء الذكاء الاصطناعي (AI Agents)</option>
+                            </select>
                         </div>
-                        <button class="w-full py-6 bg-white text-blue-600 font-black rounded-[2rem] hover:bg-blue-50 transition-all text-xl shadow-2xl active:scale-95" data-t="contact.send">إرسال الرسالة</button>
+                        <button class="w-full py-6 bg-white text-blue-600 font-black rounded-[2rem] hover:bg-blue-50 transition-all text-xl shadow-2xl active:scale-95" data-t="contact.send">إرسال طلب التسجيل</button>
                     </form>
                 </div>
             </div>
@@ -182,12 +177,12 @@
         <div class="max-w-7xl mx-auto px-4 flex flex-col items-center text-center">
             <span class="text-3xl font-black text-blue-600 mb-8 tracking-tighter">AISAAS</span>
             <div class="flex flex-wrap justify-center gap-10 mb-12 text-slate-500 font-bold">
+                <a href="#courses" class="hover:text-blue-600">الدورات</a>
                 <a href="#features" class="hover:text-blue-600">المميزات</a>
-                <a href="#automation" class="hover:text-blue-600">الأتمتة</a>
                 <a href="#pricing" class="hover:text-blue-600">الأسعار</a>
                 <a href="#contact" class="hover:text-blue-600">اتصل بنا</a>
             </div>
-            <p class="text-slate-400 font-medium" data-t="footer.rights">© 2026 AISAAS - جميع الحقوق محفوظة لمركز تدريب الذكاء الاصطناعي</p>
+            <p class="text-slate-400 font-medium" data-t="footer.rights">© 2025 AISAAS - جميع الحقوق محفوظة لمركز تدريب الذكاء الاصطناعي والأتمتة</p>
         </div>
     </footer>
 
@@ -212,80 +207,101 @@
         const translations = {
             en: {
                 dir: 'ltr',
+                'nav.courses': 'Courses',
                 'nav.features': 'Features',
-                'nav.automation': 'Automation',
                 'nav.pricing': 'Pricing',
                 'nav.contact': 'Contact',
-                'nav.start': 'Get Started',
-                'hero.badge': 'The Power of AI & Automation',
-                'hero.title': 'Scale Smarter with AI-Driven Automation',
-                'hero.subtitle': 'We don\'t just give you tools. We build integrated systems that work for you 24/7. WhatsApp, Chatbots, and n8n.',
-                'hero.cta': 'Free Consultation',
-                'hero.demo': 'See Workflows',
-                'features.title': 'Why Choose Us?',
-                'features.subtitle': 'Solutions designed for high-growth companies.',
-                'automation.title': 'Unlimited Automation',
-                'automation.desc': 'We use n8n to connect 400+ apps, Chatwoot for CRM, and official WhatsApp API.',
-                'pricing.title': 'Transparent Plans',
-                'pricing.subtitle': 'Invest in intelligence today, save thousands later.',
-                'contact.title': 'Let\'s Start Success',
-                'contact.desc': 'Our team is ready to analyze your business workflows.',
-                'contact.send': 'Send Message',
-                'footer.rights': '© 2025 AISAAS. All rights reserved.'
+                'nav.start': 'Enroll Now',
+                'hero.badge': 'Leading AI & Automation Training Academy',
+                'hero.title': 'Master Future Skills Today',
+                'hero.subtitle': 'Join our intensive training programs in AI and Automation. Learn how to build your own systems and save thousands of hours.',
+                'hero.cta': 'Browse Courses',
+                'hero.demo': 'Talk to an Advisor',
+                'courses.title': 'Our Programs',
+                'courses.subtitle': 'Practical courses designed to take you from zero to pro in automation and AI.',
+                'features.title': 'Why Train With Us?',
+                'features.subtitle': 'We offer a unique learning experience focused on practical application.',
+                'pricing.title': 'Training Packages',
+                'pricing.subtitle': 'Choose the package that fits your career goals and budget.',
+                'contact.title': 'Book Your Seat Now',
+                'contact.desc': 'Seats are limited to ensure quality training and direct interaction with instructors.',
+                'contact.send': 'Submit Registration',
+                'footer.rights': '© 2025 AISAAS - All rights reserved to the AI & Automation Training Center'
             },
             ar: {
                 dir: 'rtl',
+                'nav.courses': 'الدورات',
                 'nav.features': 'المميزات',
-                'nav.automation': 'الأتمتة',
                 'nav.pricing': 'الأسعار',
                 'nav.contact': 'اتصل بنا',
-                'nav.start': 'ابدأ الآن',
-                'hero.badge': 'منصة الأتمتة والذكاء الاصطناعي الأقوى',
-                'hero.title': 'حوّل عملك بذكاء خارق وأتمتة كاملة',
-                'hero.subtitle': 'نحن لا نقدم مجرد أدوات، بل نبني لك نظاماً متكاملاً يعمل بالنيابة عنك 24/7. أتمتة الواتساب، الشات بوت، ونظم n8n.',
-                'hero.cta': 'احصل على استشارة مجانية',
-                'hero.demo': 'شاهد كيف يعمل',
-                'features.title': 'ما الذي يجعلنا مختلفين؟',
-                'features.subtitle': 'حلول مصممة خصيصاً لتناسب احتياجات الشركات التي تطمح للنمو.',
-                'automation.title': 'أتمتة بلا حدود مع أقوى الأدوات',
-                'automation.desc': 'نستخدم n8n لربط أكثر من 400 تطبيق برمجياً، و Chatwoot لإدارة المحادثات، و WhatsApp API الرسمي.',
-                'pricing.title': 'خطط تناسب طموحك',
-                'pricing.subtitle': 'استثمر في ذكاء عملك اليوم لتوفير آلاف الساعات مستقبلاً.',
-                'contact.title': 'لنبدأ رحلة النجاح معاً',
-                'contact.desc': 'فريقنا جاهز لتحليل عملك واقتراح أفضل سيناريوهات الأتمتة الممكنة.',
-                'contact.send': 'إرسال الرسالة',
-                'footer.rights': '© 2025 AISAAS - جميع الحقوق محفوظة لمركز تدريب الذكاء الاصطناعي'
+                'nav.start': 'سجل الآن',
+                'hero.badge': 'أكاديمية تدريب الذكاء الاصطناعي الرائدة',
+                'hero.title': 'أتقن مهارات المستقبل اليوم',
+                'hero.subtitle': 'انضم إلى برامجنا التدريبية المكثفة في الذكاء الاصطناعي والأتمتة. تعلم كيف تبني أنظمتك الخاصة وتوفر آلاف الساعات من العمل اليدوي.',
+                'hero.cta': 'استعرض الدورات المتاحة',
+                'hero.demo': 'تواصل مع مستشار تعليمي',
+                'courses.title': 'برامجنا التدريبية',
+                'courses.subtitle': 'دورات تطبيقية مصممة لنقلك من الصفر إلى الاحتراف في مجال الأتمتة والذكاء الاصطناعي.',
+                'features.title': 'لماذا تتدرب معنا؟',
+                'features.subtitle': 'نقدم تجربة تعليمية فريدة تركز على التطبيق العملي والنتائج الحقيقية.',
+                'pricing.title': 'باقات التدريب',
+                'pricing.subtitle': 'اختر الباقة التي تناسب أهدافك المهنية وميزانيتك.',
+                'contact.title': 'احجز مقعدك الآن',
+                'contact.desc': 'المقاعد محدودة لضمان جودة التدريب والتفاعل المباشر مع المدربين.',
+                'contact.send': 'إرسال طلب التسجيل',
+                'footer.rights': '© 2025 AISAAS - جميع الحقوق محفوظة لمركز تدريب الذكاء الاصطناعي والأتمتة'
             },
             fr: {
                 dir: 'ltr',
-                'nav.features': 'Fonctions',
-                'nav.automation': 'Automation',
+                'nav.courses': 'Cours',
+                'nav.features': 'Atouts',
                 'nav.pricing': 'Tarifs',
                 'nav.contact': 'Contact',
-                'nav.start': 'Commencer',
-                'hero.badge': 'La puissance de l\'IA et de l\'automatisation',
-                'hero.title': 'Transformez votre entreprise avec l\'IA',
-                'hero.subtitle': 'Nous construisons des systèmes intégrés qui travaillent pour vous 24/7. WhatsApp, Chatbots et n8n.',
-                'hero.cta': 'Consultation Gratuite',
-                'hero.demo': 'Voir la démo',
-                'features.title': 'Pourquoi nous?',
-                'features.subtitle': 'Des solutions conçues pour les entreprises à forte croissance.',
-                'automation.title': 'Automatisation illimitée',
-                'automation.desc': 'Nous connectons plus de 400 applications avec n8n, Chatwoot et WhatsApp API.',
-                'pricing.title': 'Nos Forfaits',
-                'pricing.subtitle': 'Investissez dans l\'intelligence aujourd\'hui.',
-                'contact.title': 'Commençons ensemble',
-                'contact.desc': 'Notre équipe est prête à analyser vos besoins.',
-                'contact.send': 'Envoyer',
-                'footer.rights': '© 2025 AISAAS. Tous droits réservés.'
+                'nav.start': 'S\'inscrire',
+                'hero.badge': 'Académie de formation IA & Automatisation',
+                'hero.title': 'Maîtrisez les compétences du futur',
+                'hero.subtitle': 'Rejoignez nos programmes intensifs en IA et Automatisation. Apprenez à construire vos propres systèmes.',
+                'hero.cta': 'Voir les cours',
+                'hero.demo': 'Parler à un conseiller',
+                'courses.title': 'Nos Programmes',
+                'courses.subtitle': 'Des cours pratiques conçus pour vous emmener de zéro à pro.',
+                'features.title': 'Pourquoi se former avec nous?',
+                'features.subtitle': 'Nous offrons une expérience unique axée sur la pratique.',
+                'pricing.title': 'Packs de Formation',
+                'pricing.subtitle': 'Choisissez le pack qui correspond à vos objectifs.',
+                'contact.title': 'Réservez votre place',
+                'contact.desc': 'Places limitées pour garantir un encadrement de qualité.',
+                'contact.send': 'Envoyer la demande',
+                'footer.rights': '© 2025 AISAAS - Tous droits réservés au centre de formation.'
             }
         };
 
+        const coursesData = [
+            {
+                title: { ar: 'هندسة الأوامر المتقدمة', en: 'Advanced Prompt Engineering', fr: 'Prompt Engineering Avancé' },
+                level: { ar: 'مبتدئ - متوسط', en: 'Beginner - Int', fr: 'Débutant - Int' },
+                duration: { ar: '4 أسابيع', en: '4 Weeks', fr: '4 Semaines' },
+                desc: { ar: 'تعلم كيف تستخدم ChatGPT و Claude كخبير لتوليد نتائج مذهلة.', en: 'Learn how to use ChatGPT and Claude like an expert to generate amazing results.', fr: 'Apprenez à utiliser ChatGPT et Claude comme un expert.' }
+            },
+            {
+                title: { ar: 'أتمتة العمليات بـ n8n', en: 'Automation with n8n', fr: 'Automatisation n8n' },
+                level: { ar: 'متوسط', en: 'Intermediate', fr: 'Intermédiaire' },
+                duration: { ar: '6 أسابيع', en: '6 Weeks', fr: '6 Semaines' },
+                desc: { ar: 'بناء تدفقات عمل معقدة تربط بين تطبيقاتك المفضلة تلقائياً.', en: 'Build complex workflows connecting your favorite apps automatically.', fr: 'Créez des workflows complexes connectant vos apps préférées.' }
+            },
+            {
+                title: { ar: 'تطوير وكلاء الذكاء الاصطناعي', en: 'AI Agents Development', fr: 'Développement d\'Agents IA' },
+                level: { ar: 'متقدم', en: 'Advanced', fr: 'Avancé' },
+                duration: { ar: '8 أسابيع', en: '8 Weeks', fr: '8 Semaines' },
+                desc: { ar: 'برمجة وكلاء ذكاء اصطناعي قادرين على تنفيذ مهام كاملة بشكل مستقل.', en: 'Program AI agents capable of performing full tasks independently.', fr: 'Programmez des agents IA capables d\'exécuter des tâches en solo.' }
+            }
+        ];
+
         const featuresData = [
-            { icon: '🤖', title: { ar: 'ذكاء اصطناعي مخصص', en: 'Custom AI', fr: 'IA Personnalisée' }, desc: { ar: 'تدريب نماذج LLM على بيانات شركتك الخاصة.', en: 'Train LLMs on your proprietary company data.', fr: 'Entraînez des LLM sur vos propres données.' } },
-            { icon: '📱', title: { ar: 'أتمتة الواتساب الرسمي', en: 'Official WhatsApp API', fr: 'API WhatsApp Officiel' }, desc: { ar: 'ربط رسمي بدون خطر الحظر مع استجابة فورية.', en: 'No-ban risk integration with instant responses.', fr: 'Intégration sans risque de bannissement.' } },
-            { icon: '⚡', title: { ar: 'سير عمل n8n', en: 'n8n Workflows', fr: 'Workflows n8n' }, desc: { ar: 'أتمتة العمليات المعقدة والربط بين التطبيقات.', en: 'Complex automation and cross-app integration.', fr: 'Automatisation complexe et inter-app.' } },
-            { icon: '🔒', title: { ar: 'خصوصية وأمان', en: 'Security First', fr: 'Sécurité Maximale' }, desc: { ar: 'حلول مستضافة ذاتياً لضمان ملكية البيانات.', en: 'Self-hosted solutions for total data ownership.', fr: 'Solutions auto-hébergées pour vos données.' } }
+            { icon: '🎓', title: { ar: 'مدربون خبراء', en: 'Expert Instructors', fr: 'Instructeurs Experts' }, desc: { ar: 'تعلم من ممارسين حقيقيين في السوق العالمي.', en: 'Learn from real practitioners in the global market.', fr: 'Apprenez avec des experts du terrain.' } },
+            { icon: '🏗️', title: { ar: 'مشاريع عملية', en: 'Hands-on Projects', fr: 'Projets Pratiques' }, desc: { ar: 'ستقوم ببناء أنظمة حقيقية خلال فترة التدريب.', en: 'You will build real systems during the training.', fr: 'Construisez de vrais systèmes pendant les cours.' } },
+            { icon: '📜', title: { ar: 'شهادات معتمدة', en: 'Certified Progress', fr: 'Certifications' }, desc: { ar: 'احصل على شهادة تثبت مهاراتك الجديدة.', en: 'Get a certificate proving your new skills.', fr: 'Obtenez un certificat attestant vos compétences.' } },
+            { icon: '🤝', title: { ar: 'دعم مدى الحياة', en: 'Lifetime Support', fr: 'Support à Vie' }, desc: { ar: 'الوصول إلى مجتمع خريجينا الحصري للحصول على المساعدة.', en: 'Access to our exclusive alumni community for help.', fr: 'Accès à notre communauté exclusive d\'alumni.' } }
         ];
 
         let currentLang = 'ar';
@@ -296,13 +312,11 @@
             document.documentElement.lang = lang;
             document.documentElement.dir = t.dir;
 
-            // Update static elements
             document.querySelectorAll('[data-t]').forEach(el => {
                 const key = el.getAttribute('data-t');
                 if (t[key]) el.innerText = t[key];
             });
 
-            // Update UI buttons
             ['en', 'fr', 'ar'].forEach(l => {
                 const btn = document.getElementById(`btn-${l}`);
                 btn.className = l === lang 
@@ -314,48 +328,48 @@
         }
 
         function renderDynamicContent() {
-            // Features Grid
-            const grid = document.getElementById('features-grid');
-            grid.innerHTML = featuresData.map(f => `
-                <div class="feature-card bg-white p-10 rounded-[3rem] border border-slate-100/50 shadow-sm transition-all duration-500 group">
-                    <div class="text-5xl mb-8 group-hover:scale-110 transition-transform inline-block">${f.icon}</div>
-                    <h3 class="text-2xl font-black mb-4 text-slate-900">${f.title[currentLang]}</h3>
-                    <p class="text-slate-500 font-medium leading-relaxed">${f.desc[currentLang]}</p>
+            // Courses Grid
+            const cGrid = document.getElementById('courses-grid');
+            cGrid.innerHTML = coursesData.map(c => `
+                <div class="course-card bg-white p-8 rounded-[3rem] border border-slate-100 shadow-sm transition-all duration-300 flex flex-col h-full">
+                    <div class="flex justify-between items-start mb-6">
+                        <span class="px-4 py-1.5 bg-blue-50 text-blue-600 rounded-full text-xs font-bold">${c.level[currentLang]}</span>
+                        <span class="text-slate-400 text-xs font-bold">${c.duration[currentLang]}</span>
+                    </div>
+                    <h3 class="text-2xl font-black mb-4 text-slate-900">${c.title[currentLang]}</h3>
+                    <p class="text-slate-500 font-medium mb-8 flex-grow leading-relaxed">${c.desc[currentLang]}</p>
+                    <button class="w-full py-4 bg-slate-900 text-white rounded-[1.5rem] font-bold hover:bg-blue-600 transition-all">تفاصيل الدورة</button>
                 </div>
             `).join('');
 
-            // Automation List
-            const list = document.getElementById('automation-list');
-            const autoItems = [
-                { ar: 'إعداد كامل لنظم n8n و Chatwoot على خادمك الخاص.', en: 'Full setup of n8n & Chatwoot on your own servers.' },
-                { ar: 'بناء سيناريوهات أتمتة مخصصة لسير عمل موظفيك.', en: 'Custom automation scenarios for your employee workflows.' },
-                { ar: 'دعم فني وتدريب كامل لفريق العمل.', en: 'Full technical support and team training.' }
-            ];
-            list.innerHTML = autoItems.map((item, idx) => `
-                <div class="flex items-start gap-6 group">
-                    <div class="w-14 h-14 flex-shrink-0 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center font-black text-2xl group-hover:bg-blue-600 group-hover:text-white transition-all">${idx + 1}</div>
-                    <div class="text-xl font-bold text-slate-800 pt-3">${currentLang === 'ar' ? item.ar : item.en}</div>
+            // Features Grid
+            const grid = document.getElementById('features-grid');
+            grid.innerHTML = featuresData.map(f => `
+                <div class="feature-card bg-white p-10 rounded-[3rem] border border-slate-100/50 shadow-sm transition-all group">
+                    <div class="text-5xl mb-8 transition-transform inline-block">${f.icon}</div>
+                    <h3 class="text-xl font-black mb-3 text-slate-900">${f.title[currentLang]}</h3>
+                    <p class="text-slate-500 font-medium leading-relaxed text-sm">${f.desc[currentLang]}</p>
                 </div>
             `).join('');
 
             // Pricing
             const pGrid = document.getElementById('pricing-grid');
             const plans = [
-                { name: 'Starter', price: '$499', popular: false },
-                { name: 'Professional', price: '$1299', popular: true },
-                { name: 'Enterprise', price: 'Custom', popular: false }
+                { name: { ar: 'باقة المبتدئين', en: 'Starter Bundle' }, price: '$299', popular: false },
+                { name: { ar: 'باقة المحترفين', en: 'Professional Bundle' }, price: '$699', popular: true },
+                { name: { ar: 'باقة الشركات', en: 'Enterprise Training' }, price: 'Custom', popular: false }
             ];
             pGrid.innerHTML = plans.map(p => `
-                <div class="relative ${p.popular ? 'bg-slate-900 text-white scale-105 shadow-2xl' : 'bg-white text-slate-900 border border-slate-100'} p-12 rounded-[4rem] flex flex-col transition-all duration-500">
-                    ${p.popular ? '<span class="absolute -top-5 left-1/2 -translate-x-1/2 bg-blue-600 text-white px-6 py-2 rounded-full font-black text-sm uppercase tracking-widest">Most Popular</span>' : ''}
-                    <h3 class="text-2xl font-black mb-4">${p.name}</h3>
+                <div class="relative ${p.popular ? 'bg-slate-900 text-white scale-105 shadow-2xl' : 'bg-white text-slate-900 border border-slate-100'} p-12 rounded-[4rem] flex flex-col">
+                    ${p.popular ? '<span class="absolute -top-5 left-1/2 -translate-x-1/2 bg-blue-600 text-white px-6 py-2 rounded-full font-black text-sm uppercase">الأكثر طلباً</span>' : ''}
+                    <h3 class="text-xl font-black mb-4">${p.name[currentLang] || p.name.en}</h3>
                     <div class="text-5xl font-black mb-10">${p.price}</div>
                     <ul class="space-y-6 mb-12 flex-grow">
-                        <li class="flex items-center gap-3 font-medium opacity-80"><svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg> Full Dashboard</li>
-                        <li class="flex items-center gap-3 font-medium opacity-80"><svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg> AI Integrations</li>
-                        <li class="flex items-center gap-3 font-medium opacity-80"><svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg> Training Included</li>
+                        <li class="flex items-center gap-3 font-medium opacity-80"><svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg> مادة علمية مسجلة</li>
+                        <li class="flex items-center gap-3 font-medium opacity-80"><svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg> جلسات مباشرة</li>
+                        <li class="flex items-center gap-3 font-medium opacity-80"><svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg> شهادة إتمام</li>
                     </ul>
-                    <button class="w-full py-5 ${p.popular ? 'bg-blue-600 text-white' : 'bg-slate-100 text-slate-900'} font-black rounded-[2rem] hover:opacity-90 transition-all">Select Plan</button>
+                    <button class="w-full py-5 ${p.popular ? 'bg-blue-600 text-white' : 'bg-slate-100 text-slate-900'} font-black rounded-[2rem] hover:opacity-90 transition-all">اشتراك الآن</button>
                 </div>
             `).join('');
         }
@@ -365,7 +379,6 @@
             menu.classList.toggle('hidden');
         }
 
-        // Initialize with Arabic
         setLanguage('ar');
     </script>
 </body>
